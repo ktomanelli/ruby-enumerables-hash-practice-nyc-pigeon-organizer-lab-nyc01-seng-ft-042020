@@ -43,6 +43,16 @@ def nyc_pigeon_organizer(data)
             end
         end
     end
+        data[:lives].reduce(nil) do |memo,(key,value)|
+        value.length.times do |i|
+            if(pigeons.has_key?(value[i]))
+                if(!pigeons[value[i]][:lives])
+                    pigeons[value[i]][:lives]=[]
+                end
+                pigeons[value[i]][:lives].push(key.to_s)
+            end
+        end
+    end
 pigeons
 end
 
