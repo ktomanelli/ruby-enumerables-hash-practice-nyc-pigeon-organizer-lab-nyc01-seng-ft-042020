@@ -22,7 +22,7 @@ def nyc_pigeon_organizer(data)
     # write your code here!
     male = data[:gender][:male].reduce({}) do |memo,(key,value)|
         memo[key] = {}
-        memo[key][:gender] = :male
+        memo[key][:gender] = {"male"}
         memo
     end
     female = data[:gender][:female].reduce({}) do |memo,(key,value)|
